@@ -5,7 +5,6 @@ import 'package:atrons_v1/home/components/loading_skeleton.dart';
 import 'package:atrons_v1/home/explore/explore.dart';
 // import 'package:atrons_v1/home/homepage/network.dart';
 import 'package:atrons_v1/home/shelf/shelf.dart';
-import 'package:atrons_v1/home/bookmark.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
 // import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';

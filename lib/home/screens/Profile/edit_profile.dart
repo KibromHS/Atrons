@@ -49,7 +49,7 @@ class _EditProfileState extends State<EditProfile> {
         ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.check_mark_circled),
+            icon: const Icon(CupertinoIcons.check_mark_circled),
             iconSize: 32,
             onPressed: () async {
               UserPreferences.setUser(user);
@@ -57,7 +57,7 @@ class _EditProfileState extends State<EditProfile> {
               await Navigator.pushReplacement(
                 context,
                 PageTransition(
-                  child: Profile(),
+                  child: const Profile(),
                   type: PageTransitionType.leftToRight,
                 ),
               );
@@ -158,7 +158,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       children: [
         Text(
           widget.label,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
         ),
         TextField(
           controller: controller,

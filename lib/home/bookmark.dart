@@ -3,7 +3,6 @@ import 'package:atrons_v1/home/screens/Search/searching.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:page_transition/page_transition.dart';
 import '../models/book.dart';
 
@@ -17,10 +16,6 @@ class Bookmark extends StatefulWidget {
 
 class _BookmarkState extends State<Bookmark> {
   
-
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

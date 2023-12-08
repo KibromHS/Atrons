@@ -13,8 +13,8 @@ class Appearance extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             Icon(Icons.color_lens),
             SizedBox(width: 6),
             Text('Appearance'),

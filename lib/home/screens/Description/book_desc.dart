@@ -373,7 +373,7 @@ class _BookDescState extends State<BookDesc> {
                                         ),
                                       ),
                                       style: TextButton.styleFrom(
-                                        primary: Colors.teal,
+                                        foregroundColor: Colors.teal,
                                       ),
                                       onPressed: () {
                                         Navigator.push(
@@ -481,7 +481,7 @@ class _BookDescState extends State<BookDesc> {
                                             ),
                                           ),
                                           style: TextButton.styleFrom(
-                                            primary: Colors.teal,
+                                            foregroundColor: Colors.teal,
                                           ),
                                           onPressed: () {
                                             if (CheckRatedUser.check(

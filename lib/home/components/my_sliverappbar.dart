@@ -1,5 +1,4 @@
 import 'package:atrons_v1/home/bookmark.dart';
-import 'package:atrons_v1/home/screens/Notifications/Notifications.dart';
 import 'package:atrons_v1/home/screens/Search/searching.dart';
 import 'package:atrons_v1/models/book.dart';
 import 'package:flutter/material.dart';

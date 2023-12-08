@@ -53,7 +53,7 @@ class _SignupProfileState extends State<SignupProfile> {
         ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.check_mark_circled),
+            icon: const Icon(CupertinoIcons.check_mark_circled),
             color: Colors.black,
             iconSize: 32,
             onPressed: () async {
@@ -76,9 +76,6 @@ class _SignupProfileState extends State<SignupProfile> {
               UploadTask uploadTask =
                   reference.putFile(File(localUser.imagePath));
               uploadTask.snapshotEvents.listen((event) {
-                print(event.bytesTransferred.toString() +
-                    "/t" +
-                    event.totalBytes.toString());
               });
               await uploadTask.whenComplete(() async {
                 var uploadPath = await uploadTask.snapshot.ref.getDownloadURL();
@@ -122,6 +119,8 @@ class _SignupProfileState extends State<SignupProfile> {
                 );
               });
 
+              await UserPreferences.setUser(localUser);
+
               //  print(localUser.email);
 //email couldn't be set for local user
               // FirebaseFirestore.instance
@@ -132,7 +131,7 @@ class _SignupProfileState extends State<SignupProfile> {
               //     .then((value) => localUser.email);
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (_) => HomePage(),
+                  builder: (_) => const HomePage(),
                 ),
               );
             },
@@ -142,8 +141,8 @@ class _SignupProfileState extends State<SignupProfile> {
       body: isLoading
           ? const LoadingSkeleton()
           : ListView(
-              padding: EdgeInsets.symmetric(horizontal: 32),
-              physics: BouncingScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              physics: const BouncingScrollPhysics(),
               children: [
                 ProfileWidget(
                   isEdit: true,
@@ -171,8 +170,8 @@ class _SignupProfileState extends State<SignupProfile> {
                 ),
                 const SizedBox(height: 24),
                 Row(children: [
-                  Text('Male'),
-                  SizedBox(width: 6),
+                  const Text('Male'),
+                  const SizedBox(width: 6),
                   Radio(
                     value: 'M',
                     groupValue: localUser.gender,
@@ -183,9 +182,9 @@ class _SignupProfileState extends State<SignupProfile> {
                       localUser = localUser.copy(gender: gender.toString());
                     },
                   ),
-                  SizedBox(width: 15),
-                  Text('Female'),
-                  SizedBox(width: 6),
+                  const SizedBox(width: 15),
+                  const Text('Female'),
+                  const SizedBox(width: 6),
                   Radio(
                     value: 'F',
                     groupValue: localUser.gender,
@@ -222,7 +221,7 @@ class TextFieldWidget extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
         ),
         TextField(
           decoration: InputDecoration(

@@ -275,8 +275,7 @@ class _SignInEmailState extends State<SignInEmail> {
                                                       ),
                                                     );
                                                   },
-                                                  onError: (e) => print(
-                                                      "Error Getting Document:$e"),
+                                                  onError: (e) {},
                                                 );
                                                 await UserPreferences.setUser(
                                                     localUser!);
@@ -402,8 +401,8 @@ class _SignInEmailState extends State<SignInEmail> {
                                     label: const Text('Continue with Apple'),
                                     style: OutlinedButton.styleFrom(
                                       foregroundColor: Colors.black87,
-                                      shape: StadiumBorder(),
-                                      side: BorderSide(
+                                      shape: const StadiumBorder(),
+                                      side: const BorderSide(
                                         width: 2,
                                         color: Colors.black12,
                                       ),

@@ -52,7 +52,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
   @override
   Widget build(BuildContext context) {
     return loading
-        ? LoadingSkeleton()
+        ? const LoadingSkeleton()
         : Scaffold(
             resizeToAvoidBottomInset: false,
             body: Container(
@@ -228,7 +228,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (_) =>
-                                                        SignupProfile(),
+                                                        const SignupProfile(),
                                                   ),
                                                 );
                                               }
@@ -292,8 +292,8 @@ class _SignUpEmailState extends State<SignUpEmail> {
                                     label: const Text('Sign Up with Google'),
                                     style: OutlinedButton.styleFrom(
                                       foregroundColor: Colors.black87,
-                                      shape: StadiumBorder(),
-                                      side: BorderSide(
+                                      shape: const StadiumBorder(),
+                                      side: const BorderSide(
                                         width: 2,
                                         color: Colors.black12,
                                       ),
@@ -313,8 +313,8 @@ class _SignUpEmailState extends State<SignUpEmail> {
                                     label: const Text('Sign Up with Apple'),
                                     style: OutlinedButton.styleFrom(
                                       foregroundColor: Colors.black87,
-                                      shape: StadiumBorder(),
-                                      side: BorderSide(
+                                      shape: const StadiumBorder(),
+                                      side: const BorderSide(
                                         width: 2,
                                         color: Colors.black12,
                                       ),
