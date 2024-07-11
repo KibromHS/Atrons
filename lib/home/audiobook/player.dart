@@ -59,7 +59,7 @@ class _PlayerState extends State<Player> {
   }
 
   Future<void> _init() async {
-    await _audioPlayer.setLoopMode(LoopMode.all);
+    await _audioPlayer.setLoopMode(LoopMode.one);
     await _audioPlayer.setAudioSource(_playlist);
     await _audioPlayer.play();
   }

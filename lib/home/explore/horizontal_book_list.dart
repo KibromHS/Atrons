@@ -44,7 +44,7 @@ class HorizontalBookList extends StatelessWidget {
                 children: [
                   Text(title, style: const TextStyle(fontSize: 18)),
                   IconButton(
-                    icon: Icon(Icons.arrow_forward),
+                    icon: const Icon(Icons.arrow_forward),
                     iconSize: 23,
                     onPressed: () {
                       Navigator.push(

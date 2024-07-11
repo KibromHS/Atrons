@@ -261,12 +261,12 @@ class _ExploreState extends State<Explore> {
                 ),
               ),
               if (uniqueTagList.contains('Top selling'))
-                HorizontalBookList(
+                const HorizontalBookList(
                   title: 'Top selling',
                   tag: 'top-books',
                 ),
               if (uniqueTagList.contains('Free'))
-                HorizontalBookList(
+                const HorizontalBookList(
                   title: 'Free',
                   tag: 'free-books',
                 ),

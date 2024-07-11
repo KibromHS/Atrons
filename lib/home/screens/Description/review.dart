@@ -34,7 +34,7 @@ class Review extends StatelessWidget {
                 const SizedBox(width: 20),
                 Text(
                   username,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -48,7 +48,7 @@ class Review extends StatelessWidget {
             Container(
               width: (phoneWidth / 2) + 70,
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(77, 128, 127, 127),
                 borderRadius: BorderRadius.all(Radius.circular(16.0)),
               ),

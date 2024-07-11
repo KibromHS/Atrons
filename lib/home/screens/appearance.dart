@@ -6,7 +6,7 @@ class Appearance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5FCFB),
+      backgroundColor: const Color(0xFFF5FCFB),
       appBar: AppBar(
         leading: BackButton(
           onPressed: () {
