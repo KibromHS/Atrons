@@ -102,7 +102,7 @@ class _ShelfState extends State<Shelf> {
               builder: (BuildContext context,
                   AsyncSnapshot<DocumentSnapshot> snapshot) {
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }
@@ -112,7 +112,7 @@ class _ShelfState extends State<Shelf> {
                     doc.data() as Map<String, dynamic>;
 
                 if (data['mybooks'].length == 0) {
-                  return Center(
+                  return const Center(
                     child: Text('You have not purchased any book yet'),
                   );
                 }

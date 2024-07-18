@@ -8,6 +8,7 @@ import 'package:atrons_v1/home/shelf/shelf.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
 // import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 // import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -37,15 +38,15 @@ class _HomePageState extends State<HomePage> {
   var isDeviceConnected = false;
   bool isAlertSet = false;
 
-  // Future<void> secureScreen() async {
-  //   await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
-  // }
+  Future<void> secureScreen() async {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  }
 
   @override
   void initState() {
     // getConnectivity();
     super.initState();
-    // secureScreen();
+    secureScreen();
     // _networkConnectivity.initialize();
     // _networkConnectivity.myStream.listen((source) {
     //   _source = source;
@@ -85,8 +86,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Stream<List<Book>> nullStream = const Stream.empty();
     return StreamBuilder<List<Book>>(
-        stream: getBooks(),
+        stream: getBooks() ?? nullStream,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Scaffold(

@@ -96,6 +96,7 @@ class _BookDescState extends State<BookDesc> {
     } else {
       image = FileImage(File(localUser.imagePath));
     }
+    widget.book.addNumOfView();
 
     bool otherBooksByAuthor() {
       for (int i = 0; i < widget.allBooks.length; i++) {

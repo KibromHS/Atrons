@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:atrons_v1/colors.dart';
 import 'package:atrons_v1/home/components/logout.dart';
-import 'package:atrons_v1/home/screens/Help/Help.dart';
-import 'package:atrons_v1/home/screens/History/History.dart';
-import 'package:atrons_v1/home/screens/Notifications/Notifications.dart';
+// import 'package:atrons_v1/home/screens/Help/Help.dart';
+// import 'package:atrons_v1/home/screens/History/History.dart';
+// import 'package:atrons_v1/home/screens/Notifications/Notifications.dart';
 import 'package:atrons_v1/home/screens/Payment/Payment.dart';
 import 'package:atrons_v1/home/screens/Profile/profile.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
@@ -133,24 +133,24 @@ class _MyDrawerState extends State<MyDrawer> {
                       'Profile',
                       const Profile(),
                     ),
-                    drawerItem(
-                      context,
-                      Icons.history_edu,
-                      'History',
-                      const History(),
-                    ),
-                    drawerItem(
-                      context,
-                      Icons.notifications_none,
-                      'Notifications',
-                      const Notifications(),
-                    ),
-                    drawerItem(
-                      context,
-                      Icons.help_center_outlined,
-                      'Help',
-                      const Help(),
-                    ),
+                    // drawerItem(
+                    //   context,
+                    //   Icons.history_edu,
+                    //   'History',
+                    //   const History(),
+                    // ),
+                    // drawerItem(
+                    //   context,
+                    //   Icons.notifications_none,
+                    //   'Notifications',
+                    //   const Notifications(),
+                    // ),
+                    // drawerItem(
+                    //   context,
+                    //   Icons.help_center_outlined,
+                    //   'Help',
+                    //   const Help(),
+                    // ),
                     const SizedBox(height: 50),
                     Expanded(child: Container()),
                     Padding(
@@ -208,15 +208,15 @@ class _MyDrawerState extends State<MyDrawer> {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      width: double.infinity,
-                      child: const Text(
-                        'Atrons_1.0   @CepheusTech',
-                        style: TextStyle(fontSize: 11),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+                    // Container(
+                    //   padding: const EdgeInsets.all(10),
+                    //   width: double.infinity,
+                    //   child: const Text(
+                    //     'Atrons_1.0   @CepheusTech',
+                    //     style: TextStyle(fontSize: 11),
+                    //     textAlign: TextAlign.center,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

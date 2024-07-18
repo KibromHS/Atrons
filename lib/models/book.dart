@@ -19,6 +19,7 @@ class Book {
     required this.bookid,
     required this.ratingsReviews,
     required this.purchases,
+    required this.numOfViews
   });
 
   final String imageUrl;
@@ -35,6 +36,7 @@ class Book {
   final List tags;
   final String bookid;
   final int purchases;
+  final int numOfViews;
 
   List ratingsReviews; // [{'userid': '', 'rating': 0.0, 'review': ''}]
 
@@ -115,6 +117,11 @@ class Book {
     final purchaseRef =
         FirebaseFirestore.instance.collection('Books').doc(bookid);
     purchaseRef.update({'Purchases': FieldValue.increment(1)});
+  }
+
+  void addNumOfView() async {
+    final viewRef = FirebaseFirestore.instance.collection("Books").doc(bookid);
+    viewRef.update({'NumOfViews': FieldValue.increment(1)});
   }
 
   bool areReviews() {

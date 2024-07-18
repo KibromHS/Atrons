@@ -1,7 +1,7 @@
 import 'package:atrons_v1/models/book.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Stream<List<Book>> getBooks() {
+Stream<List<Book>>? getBooks() {
   return FirebaseFirestore.instance
       .collection('Books')
       .snapshots()
@@ -23,6 +23,7 @@ Stream<List<Book>> getBooks() {
               language: data['Language'],
               ratingsReviews: data['RatingsReviews'],
               purchases: data['Purchases'],
+              numOfViews: data['NumOfViews'],
               tags: data['Tags'],
             );
           } else {
