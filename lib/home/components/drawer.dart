@@ -14,7 +14,7 @@ import 'package:atrons_v1/themes.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatefulWidget {
-  const MyDrawer({Key? key, this.user}) : super(key: key);
+  const MyDrawer({super.key, this.user});
   final User? user;
 
   @override

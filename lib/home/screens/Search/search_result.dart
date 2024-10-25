@@ -8,7 +8,7 @@ import '../../../models/book.dart';
 import '../Description/book_desc.dart';
 
 class SearchResult extends StatefulWidget {
-  const SearchResult({Key? key, required this.query}) : super(key: key);
+  const SearchResult({super.key, required this.query});
 
   final String query;
 

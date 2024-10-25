@@ -13,7 +13,7 @@ import 'lucky_book.dart';
 import 'tell_us.dart';
 
 class Explore extends StatefulWidget {
-  const Explore({Key? key, required this.allBooks}) : super(key: key);
+  const Explore({super.key, required this.allBooks});
 
   final List<Book> allBooks;
 
@@ -58,7 +58,7 @@ class _ExploreState extends State<Explore> {
         myTags.add(widget.allBooks[i].tags[j]);
       }
     }
-    var seen = Set<String>();
+    var seen = <String>{};
     uniqueTagList =
         myTags.where((tag) => seen.add(tag)).toList(); // eliminate repeatition
     uniqueTagList.removeWhere((tag) => tag == '');
@@ -134,11 +134,11 @@ class _ExploreState extends State<Explore> {
                                 controller: _pageController,
                                 itemCount: books.length,
                                 itemBuilder: (context, index) {
-                                  var _scale =
+                                  var scale =
                                       _selectedIndex == index ? 1 : 0.8;
 
                                   return TweenAnimationBuilder(
-                                    tween: Tween(begin: _scale, end: _scale),
+                                    tween: Tween(begin: scale, end: scale),
                                     duration: const Duration(milliseconds: 350),
                                     curve: Curves.ease,
                                     child: Container(
@@ -230,7 +230,6 @@ class _ExploreState extends State<Explore> {
                             margin: const EdgeInsets.symmetric(horizontal: 7),
                             padding: const EdgeInsets.symmetric(vertical: 32),
                             child: ElevatedButton(
-                              child: Text(bookGenres[index]),
                               onPressed: () {
                                 Navigator.push(
                                   context,
@@ -252,6 +251,7 @@ class _ExploreState extends State<Explore> {
                                   horizontal: 25,
                                 ),
                               ),
+                              child: Text(bookGenres[index]),
                             ),
                           );
                         },
@@ -276,7 +276,7 @@ class _ExploreState extends State<Explore> {
                   title: tag,
                   tag: tag,
                 );
-              }).toList(),
+              }),
               TellUs(allBooks: widget.allBooks),
             ]),
           ),

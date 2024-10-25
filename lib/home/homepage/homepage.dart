@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                     selectedFontSize: 13,
                     showSelectedLabels: true,
                     showUnselectedLabels: true,
-                    items: const [
+                    items: [
                       BottomNavigationBarItem(
                         icon: Icon(MdiIcons.compassOutline),
                         label: 'Explore',

@@ -16,7 +16,7 @@ import '../home/homepage/homepage.dart';
 import '../home/screens/Profile/profile_widget.dart';
 
 class SignupProfile extends StatefulWidget {
-  const SignupProfile({Key? key}) : super(key: key);
+  const SignupProfile({super.key});
 
   @override
   State<SignupProfile> createState() => _SignupProfileState();
@@ -68,7 +68,7 @@ class _SignupProfileState extends State<SignupProfile> {
               // var uniqueKey =
               //     firestoreRef.collection(collectionUserImage).doc();
               String uploadFileName =
-                  DateTime.now().millisecondsSinceEpoch.toString() + '.jpg';
+                  '${DateTime.now().millisecondsSinceEpoch}.jpg';
               Reference reference = storageRef
                   .ref()
                   .child(collectionUserImage)
@@ -80,7 +80,7 @@ class _SignupProfileState extends State<SignupProfile> {
               await uploadTask.whenComplete(() async {
                 var uploadPath = await uploadTask.snapshot.ref.getDownloadURL();
 
-                _showMessage(String msg) {
+                showMessage(String msg) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text(msg),
                     duration: const Duration(seconds: 3),
@@ -100,9 +100,9 @@ class _SignupProfileState extends State<SignupProfile> {
                     'myaudios': FieldValue.arrayUnion([]),
                     'searches': FieldValue.arrayUnion([]),
                     'currentBook': '',
-                  }).then((value) => _showMessage("Record Inserted."));
+                  }).then((value) => showMessage("Record Inserted."));
                 } else {
-                  _showMessage("Something went wrong while uploading");
+                  showMessage("Something went wrong while uploading");
                 }
 
                 localUser = u.User(
@@ -204,11 +204,11 @@ class _SignupProfileState extends State<SignupProfile> {
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
-    Key? key,
+    super.key,
     required this.text,
     required this.label,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final String text;
   final String label;

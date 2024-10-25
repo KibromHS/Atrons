@@ -9,11 +9,11 @@ import '../screens/book_review.dart';
 
 class VerticalBookShelf extends StatelessWidget {
   const VerticalBookShelf({
-    Key? key,
+    super.key,
     required this.context,
     required this.book,
     required this.tag,
-  }) : super(key: key);
+  });
 
   final BuildContext context;
   final Book book;

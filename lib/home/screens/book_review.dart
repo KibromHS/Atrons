@@ -7,8 +7,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class BookReview extends StatefulWidget {
   const BookReview(
-      {Key? key, required this.book, this.rating = 0, this.review, this.isEdit})
-      : super(key: key);
+      {super.key, required this.book, this.rating = 0, this.review, this.isEdit});
 
   final Book book;
   final double rating;
@@ -118,14 +117,6 @@ class _BookReviewState extends State<BookReview> {
         ),
         actions: [
           TextButton(
-            child: Text(
-              'POST',
-              style: TextStyle(
-                fontSize: 16,
-                // color: localUser.isDarkMode ? Colors.white70 : Colors.teal,
-                color: isDisabled ? Colors.grey : Colors.teal,
-              ),
-            ),
             onPressed: isDisabled
                 ? null
                 : () {
@@ -164,6 +155,14 @@ class _BookReviewState extends State<BookReview> {
                       ));
                     }
                   },
+            child: Text(
+              'POST',
+              style: TextStyle(
+                fontSize: 16,
+                // color: localUser.isDarkMode ? Colors.white70 : Colors.teal,
+                color: isDisabled ? Colors.grey : Colors.teal,
+              ),
+            ),
           ),
           const SizedBox(width: 5),
         ],

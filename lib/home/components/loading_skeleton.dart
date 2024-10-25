@@ -2,7 +2,7 @@ import 'package:atrons_v1/home/components/skeleton.dart';
 import 'package:flutter/material.dart';
 
 class LoadingSkeleton extends StatelessWidget {
-  const LoadingSkeleton({Key? key}) : super(key: key);
+  const LoadingSkeleton({super.key});
 
   @override
   Widget build(BuildContext context) {

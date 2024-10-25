@@ -7,7 +7,7 @@ import 'package:page_transition/page_transition.dart';
 import '../models/book.dart';
 
 class Bookmark extends StatefulWidget {
-  const Bookmark({Key? key, required this.allBooks}) : super(key: key);
+  const Bookmark({super.key, required this.allBooks});
   final List<Book> allBooks;
 
   @override

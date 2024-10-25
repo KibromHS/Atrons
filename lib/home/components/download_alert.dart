@@ -58,7 +58,7 @@ class _DownloadAlertState extends State<DownloadAlert> {
         ? await getExternalStorageDirectory()
         : await getApplicationDocumentsDirectory();
     if (Platform.isAndroid) {
-      Directory(appDocDir!.path.split('Android')[0] + 'Atrons').createSync();
+      Directory('${appDocDir!.path.split('Android')[0]}Atrons').createSync();
       print('You got an Android');
       print(appDocDir.path);
     }

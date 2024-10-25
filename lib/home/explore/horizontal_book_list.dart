@@ -10,8 +10,7 @@ import '../screens/book_category.dart';
 
 class HorizontalBookList extends StatelessWidget {
   const HorizontalBookList(
-      {Key? key, required this.title, required this.tag, this.removedBookId})
-      : super(key: key);
+      {super.key, required this.title, required this.tag, this.removedBookId});
 
   final String title;
   final String? removedBookId;

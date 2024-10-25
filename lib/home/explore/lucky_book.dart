@@ -12,7 +12,7 @@ import '../screens/Description/book_desc.dart';
 
 // ignore: must_be_immutable
 class LuckyBook extends StatelessWidget {
-  LuckyBook({Key? key, required this.allBooks}) : super(key: key);
+  LuckyBook({super.key, required this.allBooks});
 
   final List<Book> allBooks;
   late int randomInt = Random().nextInt(allBooks.length);

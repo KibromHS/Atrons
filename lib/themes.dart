@@ -13,7 +13,6 @@ class MyThemes {
       primary: Color(0xFF1D2733),
       secondary: Color(0xFF5EA3DE),
       onSecondary: Color(0xFFFEFFFF),
-      background: Color(0xFF1D2733),
       surface: Color(0xFF233040),
       onSurface: Color(0xFFDEDFDF),
     ),
@@ -34,7 +33,7 @@ class MyThemes {
       primary: MyColors.whiteGreenmod,
       secondary: Colors.teal,
       onSecondary: const Color(0xFFFEFFFF),
-      background: const Color(0xFFF5FCFB),
+      surface: const Color(0xFFF5FCFB),
       // Color(0xFFF5FCFB), // color that was used on profile page
     ),
     textTheme: GoogleFonts.robotoTextTheme(),

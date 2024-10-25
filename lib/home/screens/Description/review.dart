@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class Review extends StatelessWidget {
   const Review({
-    Key? key,
+    super.key,
     required this.image,
     required this.username,
     required this.rate,
     required this.review,
-  }) : super(key: key);
+  });
 
   final ImageProvider image;
   final String username;

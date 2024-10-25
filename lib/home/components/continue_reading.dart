@@ -23,8 +23,7 @@ YYDialog CustomDialogBox(BuildContext context, Book? currentBook) {
 }
 
 class ContinueReadingPopup extends StatelessWidget {
-  const ContinueReadingPopup({Key? key, required this.cxt, required this.book})
-      : super(key: key);
+  const ContinueReadingPopup({super.key, required this.cxt, required this.book});
   final Book? book;
   final BuildContext cxt;
 

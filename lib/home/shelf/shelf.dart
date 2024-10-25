@@ -9,7 +9,7 @@ import '../../colors.dart';
 import '../../models/book.dart';
 
 class Shelf extends StatefulWidget {
-  const Shelf({Key? key, required this.allBooks}) : super(key: key);
+  const Shelf({super.key, required this.allBooks});
 
   final List<Book> allBooks;
 
@@ -48,12 +48,6 @@ class _ShelfState extends State<Shelf> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               OutlinedButton(
-                child: Text(
-                  'Reading',
-                  style: TextStyle(
-                      color:
-                          localUser.isDarkMode ? Colors.white54 : Colors.black),
-                ),
                 style: OutlinedButton.styleFrom(
                   fixedSize: const Size(120, 10),
                   side: BorderSide(
@@ -69,14 +63,14 @@ class _ShelfState extends State<Shelf> {
                 onPressed: () {
                   // Filter myBooks => Reading & Completed
                 },
-              ),
-              OutlinedButton(
                 child: Text(
-                  'Completed',
+                  'Reading',
                   style: TextStyle(
                       color:
                           localUser.isDarkMode ? Colors.white54 : Colors.black),
                 ),
+              ),
+              OutlinedButton(
                 style: OutlinedButton.styleFrom(
                   fixedSize: const Size(120, 10),
                   side: BorderSide(
@@ -90,6 +84,12 @@ class _ShelfState extends State<Shelf> {
                   ),
                 ),
                 onPressed: () {},
+                child: Text(
+                  'Completed',
+                  style: TextStyle(
+                      color:
+                          localUser.isDarkMode ? Colors.white54 : Colors.black),
+                ),
               ),
             ],
           ),

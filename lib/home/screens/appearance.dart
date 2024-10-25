@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Appearance extends StatelessWidget {
-  const Appearance({Key? key}) : super(key: key);
+  const Appearance({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -32,7 +32,7 @@ Future<void> main() async {
 }
 
 class Atrons extends StatelessWidget {
-  const Atrons({Key? key}) : super(key: key);
+  const Atrons({super.key});
 
   @override
   Widget build(BuildContext context) {

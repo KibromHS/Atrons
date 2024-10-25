@@ -30,7 +30,7 @@ class Purchased {
     //         '$fileName.epub',
     //       );
 
-    filePath = '/storage/emulated/0/Atrons/' + fileName;
+    filePath = '/storage/emulated/0/Atrons/$fileName';
 
     final localUser = UserPreferences.getUser();
     final newUser = localUser.copy(currentBook: bid);
@@ -72,7 +72,7 @@ class Purchased {
     //         '$fileName.epub',
     //       );
 
-    filePath = '/storage/emulated/0/Atrons/' + fileName;
+    filePath = '/storage/emulated/0/Atrons/$fileName';
 
     File file = File(filePath);
     await file.delete();

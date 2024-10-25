@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import './book_desc.dart';
 
 class BookInfoBig extends StatelessWidget {
-  const BookInfoBig({Key? key, required this.widget}) : super(key: key);
+  const BookInfoBig({super.key, required this.widget});
 
   final BookDesc widget;
 
@@ -83,11 +83,11 @@ class BookInfoBig extends StatelessWidget {
 
 class BookInfoSmall extends StatefulWidget {
   const BookInfoSmall({
-    Key? key,
+    super.key,
     required this.top,
     required this.price,
     required this.descWidget,
-  }) : super(key: key);
+  });
 
   final double top;
   final BookDesc descWidget;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RateStars extends StatelessWidget {
-  const RateStars({Key? key, required this.rate}) : super(key: key);
+  const RateStars({super.key, required this.rate});
   final double rate;
 
   @override

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.onClicked,
     this.isEdit = false,
-  }) : super(key: key);
+  });
 
   final String imagePath;
   final VoidCallback onClicked;

@@ -8,8 +8,7 @@ import '../../models/book.dart';
 import '../../utils/user_preferences.dart';
 
 class BookCategory extends StatelessWidget {
-  const BookCategory({Key? key, required this.category, required this.books})
-      : super(key: key);
+  const BookCategory({super.key, required this.category, required this.books});
 
   final String category;
   final List<Book> books;
@@ -102,7 +101,7 @@ class BookCategory extends StatelessWidget {
                       ],
                     ),
                   );
-                }).toList(),
+                }),
               ],
             )
           ],

@@ -10,7 +10,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../screens/book_review.dart';
 
 class TellUs extends StatefulWidget {
-  const TellUs({Key? key, required this.allBooks}) : super(key: key);
+  const TellUs({super.key, required this.allBooks});
 
   final List<Book> allBooks;
 
@@ -216,14 +216,14 @@ class _TellUsState extends State<TellUs> {
                             },
                           ),
                           TextButton(
+                            style: TextButton.styleFrom(
+                              foregroundColor: Colors.teal,
+                            ),
                             child: const Text(
                               'Write a review',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                               ),
-                            ),
-                            style: TextButton.styleFrom(
-                              primary: Colors.teal,
                             ),
                             onPressed: () {
                               if (CheckRatedUser.check(myUnratedBooks[index])) {

@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
-class Notifications extends StatelessWidget {
-  const Notifications({super.key});
+class Payment extends StatefulWidget {
+  const Payment({super.key});
 
+  @override
+  State<Payment> createState() => _PaymentState();
+}
+
+class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5FCFB),
+      backgroundColor: const Color(0xFFF5FCFB),
       appBar: AppBar(
         leading: BackButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Row(
-          children: const [
-            Icon(Icons.notifications),
-            SizedBox(width: 6),
-            Text('Notifications'),
-          ],
-        ),
+        title: const Text('Payment Account'),
       ),
       body: Container(),
     );

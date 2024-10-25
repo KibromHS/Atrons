@@ -14,7 +14,7 @@ import 'package:atrons_v1/home/screens/Profile/profile.dart';
 import 'package:page_transition/page_transition.dart';
 
 class EditProfile extends StatefulWidget {
-  const EditProfile({Key? key}) : super(key: key);
+  const EditProfile({super.key});
 
   @override
   State<EditProfile> createState() => _EditProfileState();
@@ -61,7 +61,7 @@ class _EditProfileState extends State<EditProfile> {
                   type: PageTransitionType.leftToRight,
                 ),
               );
-              _showMessage(String msg) {
+              showMessage(String msg) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(msg),
@@ -81,8 +81,8 @@ class _EditProfileState extends State<EditProfile> {
                     'Full Name': user.name,
                     'Image': user.imagePath,
                   })
-                  .then((value) => _showMessage("Record Updated"))
-                  .catchError((error) => _showMessage('update failed: $error'));
+                  .then((value) => showMessage("Record Updated"))
+                  .catchError((error) => showMessage('update failed: $error'));
             },
           ),
         ],
@@ -122,11 +122,11 @@ class _EditProfileState extends State<EditProfile> {
 
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({
-    Key? key,
+    super.key,
     required this.text,
     required this.label,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final String text;
   final String label;

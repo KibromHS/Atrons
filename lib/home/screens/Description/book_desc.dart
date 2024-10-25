@@ -20,8 +20,7 @@ import './book_info.dart';
 
 class BookDesc extends StatefulWidget {
   const BookDesc(
-      {Key? key, required this.book, required this.allBooks, this.tag = ''})
-      : super(key: key);
+      {super.key, required this.book, required this.allBooks, this.tag = ''});
 
   final Book book;
   final List<Book> allBooks;
@@ -367,12 +366,6 @@ class _BookDescState extends State<BookDesc> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 13),
                                     child: TextButton(
-                                      child: const Text(
-                                        'Edit your review',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
                                       style: TextButton.styleFrom(
                                         foregroundColor: Colors.teal,
                                       ),
@@ -392,6 +385,12 @@ class _BookDescState extends State<BookDesc> {
                                           ),
                                         );
                                       },
+                                      child: const Text(
+                                        'Edit your review',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -475,12 +474,6 @@ class _BookDescState extends State<BookDesc> {
                                         padding:
                                             const EdgeInsets.only(left: 13),
                                         child: TextButton(
-                                          child: const Text(
-                                            'Write a review',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
                                           style: TextButton.styleFrom(
                                             foregroundColor: Colors.teal,
                                           ),
@@ -508,6 +501,12 @@ class _BookDescState extends State<BookDesc> {
                                               );
                                             }
                                           },
+                                          child: const Text(
+                                            'Write a review',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -562,7 +561,7 @@ class _BookDescState extends State<BookDesc> {
                                 rate: ratingReview['rating'].toDouble(),
                                 review: ratingReview['review'],
                               );
-                            }).toList(),
+                            }),
 
                             if (otherBooksByAuthor())
                               HorizontalBookList(

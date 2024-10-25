@@ -12,7 +12,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:atrons_v1/home/screens/Profile/edit_profile.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();

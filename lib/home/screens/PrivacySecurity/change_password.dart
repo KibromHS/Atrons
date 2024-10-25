@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChangePassword extends StatefulWidget {
-  const ChangePassword({Key? key}) : super(key: key);
+  const ChangePassword({super.key});
 
   @override
   State<ChangePassword> createState() => _ChangePasswordState();
@@ -80,11 +80,11 @@ class _ChangePasswordState extends State<ChangePassword> {
 
 class PasswordField extends StatelessWidget {
   const PasswordField({
-    Key? key,
+    super.key,
     required this.label,
     required this.onChanged,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final String label;
   final ValueChanged<String> onChanged;
@@ -102,7 +102,7 @@ class PasswordField extends StatelessWidget {
           controller: controller,
           onChanged: onChanged,
           decoration: InputDecoration(
-            fillColor: Color(0xE7F8F6),
+            fillColor: Color(0x00e7f8f6),
             filled: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
