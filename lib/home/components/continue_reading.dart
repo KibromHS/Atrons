@@ -138,32 +138,32 @@ class ContinueReadingPopup extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-                                          Stack(
-                                            alignment:
-                                                AlignmentDirectional.center,
-                                            children: [
-                                              SizedBox(
-                                                width: 70,
-                                                height: 70,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  color: MyColors.whiteGreenmod,
-                                                  backgroundColor:
-                                                      Colors.grey[400],
-                                                  value:
-                                                      (book!.getPercentRead() /
-                                                          100),
-                                                  strokeWidth: 5,
-                                                ),
-                                              ),
-                                              Text(
-                                                '${book!.getPercentRead()}%',
-                                                style: TextStyle(
-                                                  color: MyColors.whiteGreenmod,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                          // Stack(
+                                          //   alignment:
+                                          //       AlignmentDirectional.center,
+                                          //   children: [
+                                          //     SizedBox(
+                                          //       width: 70,
+                                          //       height: 70,
+                                          //       child:
+                                          //           CircularProgressIndicator(
+                                          //         color: MyColors.whiteGreenmod,
+                                          //         backgroundColor:
+                                          //             Colors.grey[400],
+                                          //         value:
+                                          //             (book!.getPercentRead() /
+                                          //                 100),
+                                          //         strokeWidth: 5,
+                                          //       ),
+                                          //     ),
+                                          //     Text(
+                                          //       '${book!.getPercentRead()}%',
+                                          //       style: TextStyle(
+                                          //         color: MyColors.whiteGreenmod,
+                                          //       ),
+                                          //     ),
+                                          //   ],
+                                          // ),
                                         ],
                                       ),
                                     ],

@@ -231,7 +231,7 @@ class _BookInfoSmallState extends State<BookInfoSmall> {
                                     const SizedBox(width: 10),
                                     Text(
                                       widget.price,
-                                      style: const TextStyle(color: Colors.black),
+                                      style: const TextStyle(color: Colors.teal),
                                     ),
                                     const SizedBox(width: 10),
                                     const Text('Purchase'),

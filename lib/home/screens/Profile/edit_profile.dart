@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:atrons_v1/home/screens/Profile/profile.dart';
-import 'package:page_transition/page_transition.dart';
+// import 'package:atrons_v1/home/screens/Profile/profile.dart';
+// import 'package:page_transition/page_transition.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -38,29 +38,17 @@ class _EditProfileState extends State<EditProfile> {
         backgroundColor: Colors.transparent,
         leading: BackButton(
           onPressed: () async {
-            await Navigator.pushReplacement(
-              context,
-              PageTransition(
-                child: Profile(),
-                type: PageTransitionType.leftToRight,
-              ),
-            );
+            Navigator.of(context).pop();
           },
         ),
         actions: [
           IconButton(
             icon: const Icon(CupertinoIcons.check_mark_circled),
             iconSize: 32,
-            onPressed: () async {
+            onPressed: () {
               UserPreferences.setUser(user);
               setState(() {});
-              await Navigator.pushReplacement(
-                context,
-                PageTransition(
-                  child: const Profile(),
-                  type: PageTransitionType.leftToRight,
-                ),
-              );
+              Navigator.of(context).pop();
               showMessage(String msg) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
@@ -106,14 +94,21 @@ class _EditProfileState extends State<EditProfile> {
               setState(() => user = user.copy(imagePath: newImage.path));
             },
           ),
-          const SizedBox(height: 32),
-          TextFieldWidget(
-            label: 'Full Name',
-            text: user.name,
-            onChanged: (name) async {
-              user = user.copy(name: name);
-            },
+          const SizedBox(height: 15),
+          Column(
+            children: [
+              Text(user.email, style: TextStyle(color: Colors.grey)),
+              const SizedBox(height: 10),
+              TextFieldWidget(
+                label: 'Full Name',
+                text: user.name,
+                onChanged: (name) async {
+                  user = user.copy(name: name);
+                },
+              ),
+            ],
           ),
+          
         ],
       ),
     );
@@ -156,15 +151,25 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.label,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-        ),
         TextField(
           controller: controller,
+          cursorColor: Colors.teal,
           decoration: InputDecoration(
+            labelText: 'Full Name',
+            floatingLabelStyle: TextStyle(color: Colors.teal),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.teal,
+                width: 2,
+              )
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.teal
+              )
             ),
           ),
           onChanged: widget.onChanged,

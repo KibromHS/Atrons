@@ -18,7 +18,7 @@ import '../../models/book.dart';
 import '../components/drawer.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, this.user}) : super(key: key);
+  const HomePage({super.key, this.user});
   final User? user;
 
   @override
@@ -111,20 +111,20 @@ class _HomePageState extends State<HomePage> {
               currentBook = null;
             }
 
-            final isDarkMode = localUser.isDarkMode;
+            // final isDarkMode = localUser.isDarkMode;
             return ThemeSwitchingArea(
               child: Builder(builder: (context) {
                 return Scaffold(
                   key: _scaffoldKey,
                   drawer: MyDrawer(user: widget.user),
                   body: IndexedStack(
+                    index: _currentIndex,
                     children: [
                       Explore(allBooks: books),
                       Shelf(allBooks: books),
                       AudioBook(allBooks: books),
                       // Bookmark(allBooks: books),
                     ],
-                    index: _currentIndex,
                   ),
                   floatingActionButton: FloatingActionButton(
                     child: const Icon(Icons.menu_book_rounded),
@@ -142,11 +142,11 @@ class _HomePageState extends State<HomePage> {
                       size: 30,
                     ),
                     selectedIconTheme: IconThemeData(
-                      color: isDarkMode ? const Color(0xFF5EA3DE) : Colors.teal,
+                      color: Colors.teal,
                       size: 30,
                     ),
-                    selectedItemColor:
-                        isDarkMode ? const Color(0xFF5EA3DE) : Colors.teal,
+                    selectedItemColor: Colors.teal,
+                        // isDarkMode ? const Color(0xFF5EA3DE) : Colors.teal,
                     unselectedLabelStyle: TextStyle(color: Colors.grey[300]),
                     unselectedFontSize: 13,
                     selectedFontSize: 13,

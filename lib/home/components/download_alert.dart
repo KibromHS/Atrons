@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:atrons_v1/home/components/custom_alert.dart';
 import 'package:atrons_v1/models/book.dart';
+import 'package:atrons_v1/payments/payment.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
 import 'package:atrons_v1/utils/utils.dart';
 import 'package:dio/dio.dart';
@@ -54,6 +55,18 @@ class _DownloadAlertState extends State<DownloadAlert> {
   }
 
   Future<void> createFile() async {
+    if (widget.book.price != '' || widget.book.price != 'Free') {
+      MyPayment.initializePayment(
+        amount: widget.book.price, 
+        currency: 'ETB', 
+        email: localUser.email, 
+        firstName: localUser.name.split(' ')[0], 
+        lastName: localUser.name.split(' ').length > 1 ? localUser.name.split(' ')[1] : localUser.name, 
+        txRef: '', 
+        callbackUrl: 'https://cepheusx.com',
+      );
+    }
+
     Directory? appDocDir = Platform.isAndroid
         ? await getExternalStorageDirectory()
         : await getApplicationDocumentsDirectory();

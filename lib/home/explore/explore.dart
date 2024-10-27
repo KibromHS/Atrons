@@ -105,7 +105,7 @@ class _ExploreState extends State<Explore> {
         SliverPadding(
           padding: const EdgeInsets.all(12.0),
           sliver: SliverFixedExtentList(
-            itemExtent: 265, // Don't touch this number
+            itemExtent: 271, // Don't touch this number
             delegate: SliverChildListDelegate([
               SizedBox(
                 child: Column(
@@ -244,8 +244,8 @@ class _ExploreState extends State<Explore> {
                               },
                               style: ElevatedButton.styleFrom(
                                 // shadowColor: Colors.grey,
+                                foregroundColor: Colors.teal, 
                                 elevation: 7,
-                                // onPrimary: Colors.white,
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 3,
                                   horizontal: 25,

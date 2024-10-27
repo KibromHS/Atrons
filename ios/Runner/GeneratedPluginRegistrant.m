@@ -108,6 +108,12 @@
 @import sqflite_darwin;
 #endif
 
+#if __has_include(<url_launcher_ios/URLLauncherPlugin.h>)
+#import <url_launcher_ios/URLLauncherPlugin.h>
+#else
+@import url_launcher_ios;
+#endif
+
 #if __has_include(<vocsy_epub_viewer/EpubViewerPlugin.h>)
 #import <vocsy_epub_viewer/EpubViewerPlugin.h>
 #else
@@ -134,6 +140,7 @@
   [PermissionHandlerPlugin registerWithRegistrar:[registry registrarForPlugin:@"PermissionHandlerPlugin"]];
   [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
+  [URLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"URLLauncherPlugin"]];
   [EpubViewerPlugin registerWithRegistrar:[registry registrarForPlugin:@"EpubViewerPlugin"]];
 }
 

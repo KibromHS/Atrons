@@ -1,7 +1,10 @@
-import 'package:atrons_v1/home/screens/Help/Help.dart';
-import 'package:atrons_v1/home/screens/History/History.dart';
+import 'package:atrons_v1/home/screens/Help/help.dart';
+// import 'package:atrons_v1/home/screens/History/History.dart';
 import 'package:atrons_v1/home/screens/Payment/Payment.dart';
-import 'package:atrons_v1/home/screens/PrivacySecurity/change_password.dart';
+// import 'package:atrons_v1/home/screens/PrivacySecurity/change_password.dart';
+import 'package:atrons_v1/home/screens/PrivacySecurity/privacy_policy.dart';
+import 'package:atrons_v1/home/screens/PrivacySecurity/reports.dart';
+import 'package:atrons_v1/home/screens/PrivacySecurity/terms_of_service.dart';
 import 'package:atrons_v1/home/screens/Profile/profile_widget.dart';
 // import 'package:atrons_v1/home/screens/appearance.dart';
 import 'package:atrons_v1/models/user.dart';
@@ -85,17 +88,17 @@ class _ProfileState extends State<Profile> {
             iconColor: user.isDarkMode ? Colors.white : Colors.black,
             textColor: user.isDarkMode ? Colors.white : Colors.black,
             children: [
+              // profileItem(context, CupertinoIcons.lock_shield_fill,
+              //     'Change Password', const ChangePassword()),
               profileItem(context, CupertinoIcons.lock_shield_fill,
-                  'Change Password', const ChangePassword()),
+                  'Privacy Policy', const PrivacyPolicy()),
               profileItem(context, CupertinoIcons.lock_shield_fill,
-                  'Privacy Policy', const ChangePassword()),
-              profileItem(context, CupertinoIcons.lock_shield_fill,
-                  'Terms of Service', const ChangePassword()),
+                  'Terms of Service', const TermsOfService()),
               profileItem(context, CupertinoIcons.lock_shield_fill, 'Report',
-                  const ChangePassword()),
+                  const Report()),
             ],
           ),
-          profileItem(context, CupertinoIcons.timer, 'History', const History()),
+          // profileItem(context, CupertinoIcons.timer, 'History', const History()),
           // profileItem(context, Icons.color_lens, 'Appearance', const Appearance()),
           // ListTile(
           //   leading: const Icon(Icons.notifications_active),
@@ -109,59 +112,59 @@ class _ProfileState extends State<Profile> {
           //     },
           //   ),
           // ),
-          ExpansionTile(
-            leading: const Icon(Icons.language),
-            title: const Text('Language'),
-            iconColor: user.isDarkMode ? Colors.white : Colors.black,
-            textColor: user.isDarkMode ? Colors.white : Colors.black,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text('English'),
-                  Radio(
-                    value: 'English',
-                    groupValue: user.language,
-                    onChanged: (String? value) {
-                      user = user.copy(language: value);
-                      UserPreferences.setUser(user);
-                      setState(() {});
-                    },
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text('አማርኛ'),
-                  Radio(
-                    value: 'Amharic',
-                    groupValue: user.language,
-                    onChanged: (value) {
-                      user = user.copy(language: value.toString());
-                      UserPreferences.setUser(user);
-                      setState(() {});
-                    },
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text('ትግርኛ'),
-                  Radio(
-                    value: 'Tigrinya',
-                    groupValue: user.language,
-                    onChanged: (value) async {
-                      user = user.copy(language: value.toString());
-                      await UserPreferences.setUser(user);
-                      setState(() {});
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
+          // ExpansionTile(
+          //   leading: const Icon(Icons.language),
+          //   title: const Text('Language'),
+          //   iconColor: user.isDarkMode ? Colors.white : Colors.black,
+          //   textColor: user.isDarkMode ? Colors.white : Colors.black,
+          //   children: [
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.end,
+          //       children: [
+          //         const Text('English'),
+          //         Radio(
+          //           value: 'English',
+          //           groupValue: user.language,
+          //           onChanged: (String? value) {
+          //             user = user.copy(language: value);
+          //             UserPreferences.setUser(user);
+          //             setState(() {});
+          //           },
+          //         ),
+          //       ],
+          //     ),
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.end,
+          //       children: [
+          //         const Text('አማርኛ'),
+          //         Radio(
+          //           value: 'Amharic',
+          //           groupValue: user.language,
+          //           onChanged: (value) {
+          //             user = user.copy(language: value.toString());
+          //             UserPreferences.setUser(user);
+          //             setState(() {});
+          //           },
+          //         ),
+          //       ],
+          //     ),
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.end,
+          //       children: [
+          //         const Text('ትግርኛ'),
+          //         Radio(
+          //           value: 'Tigrinya',
+          //           groupValue: user.language,
+          //           onChanged: (value) async {
+          //             user = user.copy(language: value.toString());
+          //             await UserPreferences.setUser(user);
+          //             setState(() {});
+          //           },
+          //         ),
+          //       ],
+          //     ),
+          //   ],
+          // ),
           profileItem(context, Icons.help, 'Help & Support', const Help()),
         ],
       ),

@@ -2,10 +2,13 @@ import 'dart:io';
 
 import 'package:atrons_v1/colors.dart';
 import 'package:atrons_v1/home/components/logout.dart';
+import 'package:atrons_v1/home/screens/Help/help.dart';
+// import 'package:atrons_v1/home/screens/History/History.dart';
 // import 'package:atrons_v1/home/screens/Help/Help.dart';
 // import 'package:atrons_v1/home/screens/History/History.dart';
 // import 'package:atrons_v1/home/screens/Notifications/Notifications.dart';
 import 'package:atrons_v1/home/screens/Payment/Payment.dart';
+import 'package:atrons_v1/home/screens/Profile/edit_profile.dart';
 import 'package:atrons_v1/home/screens/Profile/profile.dart';
 import 'package:atrons_v1/utils/user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -88,7 +91,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                     onTap: () {
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
-                                          builder: (_) => const Profile(),
+                                          builder: (_) => const EditProfile(),
                                         ),
                                       );
                                     },
@@ -131,6 +134,12 @@ class _MyDrawerState extends State<MyDrawer> {
                       context,
                       Icons.person,
                       'Profile',
+                      const EditProfile()
+                    ),
+                    drawerItem(
+                      context,
+                      Icons.settings,
+                      'Settings',
                       const Profile(),
                     ),
                     // drawerItem(
@@ -145,12 +154,12 @@ class _MyDrawerState extends State<MyDrawer> {
                     //   'Notifications',
                     //   const Notifications(),
                     // ),
-                    // drawerItem(
-                    //   context,
-                    //   Icons.help_center_outlined,
-                    //   'Help',
-                    //   const Help(),
-                    // ),
+                    drawerItem(
+                      context,
+                      Icons.help_center_outlined,
+                      'Help',
+                      const Help(),
+                    ),
                     const SizedBox(height: 50),
                     Expanded(child: Container()),
                     Padding(

@@ -20,7 +20,7 @@ class HorizontalBookList extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Book> filteredBooks = [];
     return SizedBox(
-      height: 261,
+      height: 270,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -151,11 +151,10 @@ class HorizontalBookList extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 1),
                                 Text(
-                                  book.price == '' ? '' : '${book.price} ETB',
+                                  book.price == '' ? 'Free' : '${book.price} ETB',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color:
-                                        book.price == '' ? null : Colors.teal,
+                                    color:Colors.teal,
                                   ),
                                 ),
                               ],

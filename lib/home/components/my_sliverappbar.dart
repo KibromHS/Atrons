@@ -21,7 +21,7 @@ class MyCustomSliverAppBar extends StatelessWidget {
           return IconButton(
             onPressed: () => Scaffold.of(context).openDrawer(),
             icon: Icon(MdiIcons.viewGridOutline),
-            // color: Colors.teal,
+            color: Colors.teal,
             iconSize: 35,
           );
         },
@@ -30,6 +30,7 @@ class MyCustomSliverAppBar extends StatelessWidget {
         IconButton(
           icon: const Icon(Icons.bookmark_border_outlined),
           iconSize: 35,
+          color: Colors.teal,
           onPressed: () {
             Navigator.push(
               context,

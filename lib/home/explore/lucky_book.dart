@@ -121,9 +121,7 @@ class LuckyBook extends StatelessWidget {
                           ? TextButton.icon(
                               icon: const Icon(Icons.file_open),
                               style: TextButton.styleFrom(
-                                foregroundColor: UserPreferences.getUser().isDarkMode
-                                    ? const Color(0xFF5EA3DE)
-                                    : Colors.teal,
+                                foregroundColor: Colors.teal,
                               ),
                               label: const Text('Open'),
                               onPressed: () async {
@@ -136,9 +134,7 @@ class LuckyBook extends StatelessWidget {
                           : TextButton.icon(
                               icon: const Icon(Icons.payment),
                               style: TextButton.styleFrom(
-                                foregroundColor: UserPreferences.getUser().isDarkMode
-                                    ? const Color(0xFF5EA3DE)
-                                    : Colors.teal,
+                                foregroundColor: Colors.teal,
                               ),
                               label: const Text('Purchase'),
                               onPressed: () async {

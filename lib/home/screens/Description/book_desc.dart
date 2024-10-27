@@ -174,7 +174,8 @@ class _BookDescState extends State<BookDesc> {
                           color: Colors.white70,
                           iconSize: 26,
                           onPressed: () {
-                            if (localUser.bookmarks
+                            final luser = UserPreferences.getUser();
+                            if (luser.bookmarks
                                 .contains(widget.book.bookid)) {
                               localUser.removeMarkedBook(widget.book.bookid);
                               localUser.bookmarks.remove(widget.book.bookid);
@@ -584,7 +585,7 @@ class _BookDescState extends State<BookDesc> {
 
   Widget buildFab(
       double phoneWidth, double phoneHeight, String price, bool itIsMyBook) {
-    final double defaultMargin = phoneHeight / 2;
+    final double defaultMargin = phoneHeight / 1.94;
     final double defaultStart = defaultMargin - 40;
     final double defaultEnd = defaultStart / 1.7;
 
@@ -629,15 +630,15 @@ class _BookDescState extends State<BookDesc> {
                     setState(() {
                       downloading = true;
                     });
-                    if (!await File(
-                            '/storage/emulated/0/Atrons/${widget.book.title.replaceAll(' ', '_').replaceAll(r"\'", "'")}.epub')
-                        .exists()) {
-                      print(
-                          '!!!!!!!!!!!!!!!!!!!!!local path is null!!!!!!!!!!!!!!!!!!!!!!!!!!');
-                    } else {
-                      print(
-                          '!!!!!!!!!!!!!!!!!!!!!the file is there !!!!!!!!!!!!!!!!!!!!!!');
-                    }
+                    // if (!await File(
+                    //         '/storage/emulated/0/Atrons/${widget.book.title.replaceAll(' ', '_').replaceAll(r"\'", "'")}.epub')
+                    //     .exists()) {
+                    //   print(
+                    //       '!!!!!!!!!!!!!!!!!!!!!local path is null!!!!!!!!!!!!!!!!!!!!!!!!!!');
+                    // } else {
+                    //   print(
+                    //       '!!!!!!!!!!!!!!!!!!!!!the file is there !!!!!!!!!!!!!!!!!!!!!!');
+                    // }
 
                     await Purchased.openAtronsBook(widget.book.title, widget.book.bookid);
                     setState(() {
@@ -660,7 +661,7 @@ class _BookDescState extends State<BookDesc> {
                             const SizedBox(width: 10),
                             Text(
                               price,
-                              style: const TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.teal),
                             ),
                             const SizedBox(width: 10),
                             const Text('Purchase'),

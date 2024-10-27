@@ -16,7 +16,7 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.primary;
+    // final color = Theme.of(context).colorScheme.primary;
     Object image;
 
     if (imagePath.contains('https://')) {
@@ -51,14 +51,20 @@ class ProfileWidget extends StatelessWidget {
               color: Colors.white,
               all: 3,
               child: buildCircle(
-                color: color,
+                color: Colors.teal,
                 all: 8,
                 child: isEdit
-                    ? const Icon(
-                        Icons.add_a_photo,
-                        size: 20,
-                        color: Colors.white,
-                      )
+                    ? SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: IconButton(
+                          icon: Icon(Icons.add_a_photo, size: 16),
+                          padding: const EdgeInsets.all(0),
+                          constraints: BoxConstraints(),
+                          color: Colors.white,
+                          onPressed: onClicked,
+                        ),
+                    )
                     : null,
               ),
             ),

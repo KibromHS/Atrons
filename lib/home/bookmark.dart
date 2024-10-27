@@ -158,7 +158,12 @@ class _BookmarkState extends State<Bookmark> {
                                 ? Colors.white70
                                 : Colors.teal,
                             iconSize: 25,
-                            onPressed: () {},
+                            onPressed: () {
+                              myBooks.remove(book);
+                              localUser.removeMarkedBook(book.bookid);
+                              localUser.bookmarks.remove(book.bookid);
+                              setState(() {});
+                            },
                           ),
                         )
                       ],
