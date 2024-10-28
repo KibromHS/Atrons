@@ -14,13 +14,4 @@ Atrons is a Flutter-based app designed to provide a seamless book reading experi
 
 ### Prerequisites
 - **Flutter** SDK
-- **Firebase** (for authentication, if required)
-- **Chapa** (for payment integration, if required)
-- **MongoDB Atlas** for backend database (if using a backend)
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/atrons.git
-   cd atrons
+- **Firebase**
